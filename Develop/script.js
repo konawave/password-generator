@@ -10,6 +10,9 @@ var numbers = true; // boolean for numbers
 var special = true; // boolean for special characters
 var pwLength = 0; // blank variable for length 
 var validAnswers = []; // An array with all valid answers, potentially has to be separate arrays for each category
+var validUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+var validLower = validUpper.lowercase
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
@@ -28,12 +31,9 @@ var generateBtn = document.querySelector("#generate");
     // function makes blank password variable equal to Math.floor((Math.random) * (array.length)), possibly a for loop to iterate through each character of the password?
     // prints generated password into the text box on the webpage.
   // This function may need to be moved above letsPlay function since letsPlay calls generatePassword.
-let uppercase = confirm("Would you like uppercase characters?")
-function generatePassword() {
-  if (uppercase = true) {
-    validAnswers.append("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ) }
-
-}
+confirm("Would you like uppercase characters?")
+validAnswers.push(validUpper)
+console.log(validAnswers)
 
 function writePassword() {
   var password = generatePassword(); // password variable calls generatePassword function.
@@ -44,6 +44,4 @@ function writePassword() {
 
 // *Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); // this CALLS function writePassword
-
-
 
