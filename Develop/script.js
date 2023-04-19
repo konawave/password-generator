@@ -1,7 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
-var pwlength = 0
 
 function writePassword() {
   var password = generatePassword();
@@ -12,7 +11,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 // As a user, I need a secure password generator that takes into account criteria such as characters, uppercase, lowercase, and numbers.
   // Variables/Objects: 
