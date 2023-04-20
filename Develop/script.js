@@ -35,12 +35,12 @@
       }
     var password = []
     for (i = 0; i <= passwordLength; i++) {
-      var passwordtext = Math.floor(Math.random() * validAnswers.length); //Need to find a way to append
-      password.push(passwordtext);
+      var password = Math.floor(Math.random() * validAnswers.length); //Need to find a way to append
+      var finalpassword = password.push(validAnswers[i]);
+      return finalpassword;
     }
       
 
-    return password
   }
     // if ((confirmSpecial && confirmNumbers && confirmUpper && confirmLower) == false) {
     //     alert("At least one option needs to be chosen! Please try again!")
@@ -73,5 +73,8 @@
   
   // *Add event listener to generate button
   generateBtn.addEventListener("click", writePassword); // this CALLS function writePassword
-  
+
+
+  // Function should:
+    // iterate through the validAnswers array, and each iteration it should add what it choses to the password variable, but only as many iterations as the passwordLength prompt provided. 
   
