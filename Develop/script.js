@@ -33,10 +33,14 @@
     if (confirmSpecial = true) {
       validAnswers = validAnswers.concat(validSpecial);
       }
-    
-    passwordtext = validAnswers[Math.floor(Math.random() * validAnswers.length)];
+    var password = []
+    for (i = 0; i <= passwordLength; i++) {
+      var passwordtext = Math.floor(Math.random() * validAnswers.length); //Need to find a way to append
+      password.push(passwordtext);
+    }
+      
 
-    return passwordtext
+    return password
   }
     // if ((confirmSpecial && confirmNumbers && confirmUpper && confirmLower) == false) {
     //     alert("At least one option needs to be chosen! Please try again!")
