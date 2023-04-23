@@ -15,11 +15,12 @@
   var chosenLength = 0;
   
   function generatePassword() {
-    var confirmUpper = confirm("Do you want uppercase letters?");
-    var confirmLower = confirm("Do you want lowercase letters?");
-    var confirmNumbers = confirm("Do you want numbers?");
-    var confirmSpecial = confirm("Do you want special characters?");
-    var passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
+    let password = ""
+    let confirmUpper = confirm("Do you want uppercase letters?");
+    let confirmLower = confirm("Do you want lowercase letters?");
+    let confirmNumbers = confirm("Do you want numbers?");
+    let confirmSpecial = confirm("Do you want special characters?");
+    let passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
   
     if (confirmUpper == false && confirmLower == false && confirmNumbers == false && confirmSpecial == false) {
       alert("You must select at least one character type!");
