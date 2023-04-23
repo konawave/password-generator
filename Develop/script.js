@@ -1,68 +1,65 @@
 // Assignment Code
     
-  var passwordtext ="" ;// blank variable for the password generation
+
+  // blank variable for the password generation
   var validAnswers = []; // An array with all valid answers, potentially has to be separate arrays for each category
  
   var generateBtn = document.querySelector("#generate");
   // Write password to the #password input
-  
-  let confirmUpper = confirm("Do you want uppercase letters?");
-  let confirmLower = confirm("Do you want lowercase letters?");
-  let confirmNumbers = confirm("Do you want numbers?");
-  let confirmSpecial = confirm("Do you want special characters?");
-  let passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
+
+  var validAnswers = []
+  var password = "";
+  var validUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var validLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+  var validSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"];
+  var validNumbers = ["0", "1", "2", "3", "4", "5", "5", "6", "7", "8", "9"];
+  var chosenLength = 0;
   
   function generatePassword() {
-    var validUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    var validLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
-    var validSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"];
-    var validNumbers = ["0", "1", "2", "3", "4", "5", "5", "6", "7", "8", "9"];
-
-    if (confirmUpper = true) {
-        validAnswers = validAnswers.concat(validUpper);
-      }
-      
-    if (confirmLower = true) {
-      validAnswers = validAnswers.concat(validLower);
-      }
-  
-    if (confirmNumbers = true) {
-      validAnswers = validAnswers.concat(validNumbers);
-      }
-  
-    if (confirmSpecial = true) {
-      validAnswers = validAnswers.concat(validSpecial);
-      }
-    var password = []
-    for (i = 0; i <= passwordLength; i++) {
-      var password = Math.floor(Math.random() * validAnswers.length); //Need to find a way to append
-      var finalpassword = password.push(validAnswers[i]);
-      return finalpassword;
+    let password = ""
+    let passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
+    
+    if (parseInt(passwordLength) > 7 && parseInt(passwordLength) < 129) {
+      chosenLength = parseInt(passwordLength);
     }
+      else {
+        alert("Please choose a valid number!");
+      }
+  
+    let confirmUpper = confirm("Do you want uppercase letters?");
+    if (confirmUpper == true) {
+      validAnswers = validAnswers.concat(validUpper);
+      password = password.concat(validUpper[Math.floor(Math.random() * validUpper.length)]);   
+      }
       
+    let confirmLower = confirm("Do you want lowercase letters?");  
+    if (confirmLower == true) {
+      validAnswers = validAnswers.concat(validLower);
+      password = password.concat(validLower[Math.floor(Math.random() * validLower.length)]);    
+      }
 
-  }
-    // if ((confirmSpecial && confirmNumbers && confirmUpper && confirmLower) == false) {
-    //     alert("At least one option needs to be chosen! Please try again!")
-    //     generatePassword;
-      // if (confirmSpecial == false && confirmUpper == false && confirmNumbers == false && confirmLower == false) {
-      //   alert("Try again!")
-      //   generatePassword
-      // }
-      // }
-    // if (passwordLength >= 8 && passwordLength <= 128) {
-    //   for (i = 0; i < passwordLength; i++ ) {
-    //     passwordunit = Math.floor(Math.random() * validAnswers.length);
-    //     passwordtext = passwordtext.append(passwordunit);
-    // }
-  
-    //   }
-    //   else {
-    //     alert("Please only use numbers.");
-    //     generatePassword();
-    //   }
-    // return
-  
+    let confirmNumbers = confirm("Do you want numbers?");
+    if (confirmNumbers == true) {
+      validAnswers = validAnswers.concat(validNumbers);
+      password = password.concat(validNumbers[Math.floor(Math.random() * validNumbers.length)]);
+      }
+
+    let confirmSpecial = confirm("Do you want special characters?");
+    if (confirmSpecial == true) {
+      validAnswers = validAnswers.concat(validSpecial);
+      password = password.concat(validSpecial[Math.floor(Math.random() * validSpecial.length)]);
+      }  
+
+    if (confirmUpper == false && confirmLower == false && confirmNumbers == false && confirmSpecial == false) {
+        alert("You must select at least one character type!");
+        generatePassword();
+     }
+    
+    for (i = password.length; i < chosenLength; i++ ) {
+      password = password.concat(validAnswers[Math.floor(Math.random() * validAnswers.length)])
+     }
+  return password
+}
   
   function writePassword() {
     var password = generatePassword(); // password equals the value returned in the generatePassword function
@@ -74,7 +71,5 @@
   // *Add event listener to generate button
   generateBtn.addEventListener("click", writePassword); // this CALLS function writePassword
 
-
-  // Function should:
-    // iterate through the validAnswers array, and each iteration it should add what it choses to the password variable, but only as many iterations as the passwordLength prompt provided. 
+ 
   
