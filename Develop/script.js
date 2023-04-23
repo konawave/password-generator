@@ -1,5 +1,6 @@
 // Assignment Code
     
+
   // blank variable for the password generation
   var validAnswers = []; // An array with all valid answers, potentially has to be separate arrays for each category
  
@@ -47,6 +48,7 @@
       validAnswers = validAnswers.concat(validSpecial);
       password = password.concat(validSpecial[Math.floor(Math.random() * validSpecial.length)]);
       }
+
 
     if (parseInt(passwordLength) > 8 && parseInt(passwordLength) < 128) {
       chosenLength = parseInt(passwordLength);
