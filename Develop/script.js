@@ -23,6 +23,7 @@
     }
       else {
         alert("Please choose a valid number!");
+        generatePassword();
       }
   
     let confirmUpper = confirm("Do you want uppercase letters?");
