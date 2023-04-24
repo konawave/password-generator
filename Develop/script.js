@@ -17,13 +17,14 @@
   function generatePassword() {
     let password = ""
     let validAnswers = []
+
     let passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
-    
     if (parseInt(passwordLength) > 7 && parseInt(passwordLength) < 129) {
       chosenLength = parseInt(passwordLength);
     }
       else {
         alert("Please choose a valid number!");
+        return "invalid number selection. Click button again.";
       }
   
     let confirmUpper = confirm("Do you want uppercase letters?");
@@ -52,12 +53,12 @@
 
     if (confirmUpper == false && confirmLower == false && confirmNumbers == false && confirmSpecial == false) {
         alert("You must select at least one character type!");
+        return "No characters selected. Please click button again and select at least 1 character type."
      }
     
     for (i = password.length; i < chosenLength; i++ ) {
       password = password.concat(validAnswers[Math.floor(Math.random() * validAnswers.length)])
      }
-  console.log(validAnswers);
   return password
 }
   
