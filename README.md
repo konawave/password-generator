@@ -1,11 +1,5 @@
 # 03 JavaScript: Password Generator
 
-## Your Task
-
-This week's Challenge requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
-
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
-
 ## User Story
 
 ```
@@ -45,9 +39,22 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the web application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+![The Password Generator application displays a red button to "Generate Password". When clicked, you are prompted to enter your criteria which the generator will take into account before providing a fitting password.](./Assets/password-mockup.png)
 
-## Grading Requirements
+## How to Use
+
+* Once on the webpage, click the red button. This will prompt you to enter your password criteria, after which the generator will provide a suitable random password taking all criteria into account. 
+
+## What I learned
+
+* I once again learned that syntax will be the death of me. That is what took me the longest to get the project working. 
+* I learned about the functionality of eventListeners.
+
+## Link to deployed application
+
+
+
+<!-- ## Grading Requirements
 
 > **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
 >
@@ -104,4 +111,4 @@ You are required to submit the following for review:
 * The URL of the GitHub repository, with a unique name and a readme describing the project.
 
 - - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved. -->
