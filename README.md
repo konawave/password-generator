@@ -39,7 +39,7 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the web application's appearance and functionality:
 
-![The Password Generator application displays a red button to "Generate Password". When clicked, you are prompted to enter your criteria which the generator will take into account before providing a fitting password.](./Assets/password-mockup.png)
+![The Password Generator application displays a red button to "Generate Password". When clicked, you are prompted to enter your criteria which the generator will take into account before providing a fitting password.](./Assets/password-Mock.png)
 
 ## How to Use
 
