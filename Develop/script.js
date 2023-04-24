@@ -9,13 +9,14 @@
   var validAnswers = []
   var password = ""; // blank variable to store password updates. This gets reset every time the function generatePassword is called.
   var validUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var validLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+  var validLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   var validSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"];
   var validNumbers = ["0", "1", "2", "3", "4", "5", "5", "6", "7", "8", "9"];
   var chosenLength = 0;
   
   function generatePassword() {
     let password = ""
+    let validAnswers = []
     let passwordLength = prompt("How long do you want your password? Pick a length between 8 and 128 characters.");
     
     if (parseInt(passwordLength) > 7 && parseInt(passwordLength) < 129) {
@@ -23,7 +24,6 @@
     }
       else {
         alert("Please choose a valid number!");
-        generatePassword();
       }
   
     let confirmUpper = confirm("Do you want uppercase letters?");
@@ -52,12 +52,12 @@
 
     if (confirmUpper == false && confirmLower == false && confirmNumbers == false && confirmSpecial == false) {
         alert("You must select at least one character type!");
-        generatePassword();
      }
     
     for (i = password.length; i < chosenLength; i++ ) {
       password = password.concat(validAnswers[Math.floor(Math.random() * validAnswers.length)])
      }
+  console.log(validAnswers);
   return password
 }
   
