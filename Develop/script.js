@@ -1,14 +1,13 @@
 // Assignment Code
     
 
-  // blank variable for the password generation
-  var validAnswers = []; // An array with all valid answers, potentially has to be separate arrays for each category
+  var validAnswers = []; // An array with all valid answers.
  
   var generateBtn = document.querySelector("#generate");
   // Write password to the #password input
 
   var validAnswers = []
-  var password = "";
+  var password = ""; // blank variable to store password updates. This gets reset every time the function generatePassword is called.
   var validUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var validLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
   var validSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"];
